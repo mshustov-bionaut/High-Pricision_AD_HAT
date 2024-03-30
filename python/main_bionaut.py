@@ -24,8 +24,11 @@ try:
     # and the need to choose a suitable digital filter(REG_MODE1)
     if (ADC.ADS1263_init_ADC1('ADS1263_400SPS') == -1):
         exit()
+    adc_mode = input('Select ADC mode: 0-SingleChannel 1-Differential')
+    if adc_mode!=1 and adc_mode!=0:
+        adc_mode = 1
     ADC.ADS1263_SetMode(1) # 0 is singleChannel, 1 is diffChannel
-    print('ADC mode differential')
+    print(f'ADC mode {adc_mode}')
     # ADC.ADS1263_DAC_Test(1, 1)      # Open IN6
     # ADC.ADS1263_DAC_Test(0, 1)      # Open IN7
     
