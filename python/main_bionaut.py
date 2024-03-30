@@ -25,8 +25,10 @@ try:
     if (ADC.ADS1263_init_ADC1('ADS1263_400SPS') == -1):
         exit()
     adc_mode = input('Select ADC mode: 0-SingleChannel 1-Differential')
-    if adc_mode!=1 and adc_mode!=0:
+    if adc_mode!='1' and adc_mode!='0':
         adc_mode = 1
+    else:
+        adc_mode = int(adc_mode)
     ADC.ADS1263_SetMode(adc_mode) # 0 is singleChannel, 1 is diffChannel
     print(f'ADC mode {adc_mode}')
     # ADC.ADS1263_DAC_Test(1, 1)      # Open IN6
