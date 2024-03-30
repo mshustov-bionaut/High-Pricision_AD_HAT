@@ -32,6 +32,7 @@ try:
     iteration = 0
     while iteration < 1000:
         ADC_Value.append(ADC.ADS1263_GetChannalValue(0))
+        iteration += 1
     save_filename = 'data_'+str(time.time())+'.csv'
     with open(save_filename,'w') as f:
         write = csv.writer(f)
