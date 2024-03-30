@@ -27,7 +27,7 @@ try:
     adc_mode = input('Select ADC mode: 0-SingleChannel 1-Differential')
     if adc_mode!=1 and adc_mode!=0:
         adc_mode = 1
-    ADC.ADS1263_SetMode(1) # 0 is singleChannel, 1 is diffChannel
+    ADC.ADS1263_SetMode(adc_mode) # 0 is singleChannel, 1 is diffChannel
     print(f'ADC mode {adc_mode}')
     # ADC.ADS1263_DAC_Test(1, 1)      # Open IN6
     # ADC.ADS1263_DAC_Test(0, 1)      # Open IN7
